@@ -6,6 +6,8 @@ before_action :authenticate_user!, only: [:edit,:update]
   end
 
   def show
+    @user = User.find(params[:id])
+    @book = Book.where(params[:id])
   end
 
   def edit
