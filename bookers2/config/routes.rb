@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :books, only: [:new, :create, :edit, :index, :show, :update, :destroy]
   resources :users, only: [:index, :show, :edit, :update]
   patch 'users/:id' => 'users#show'
+  post 'books/:id/edit' => 'books#show', as: 'edit_book2'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

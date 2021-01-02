@@ -1,4 +1,7 @@
 <h1>Users</h1>
+
+<%= render 'layouts/sidebar', user: @user, book: @book %>
+
 <% @users.each do |user| %>
 <div>
   <%= attachment_image_tag user, :profile_image, size: "100x100", format: 'jpeg', fallback: "no_image.jpg" %>
