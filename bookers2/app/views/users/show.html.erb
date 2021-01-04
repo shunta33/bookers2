@@ -1,8 +1,11 @@
 <h1>Books</h1>
+
+<%= render 'layouts/sidebar', user: @user, book: @book_show %>
+
 <% @book.each do |book| %>
 <div>
-  <p>投稿ユーザー画像：<%= attachment_image_tag @user, :profile_image, size: "100x100", format: 'jpeg', fallback: "no_image.jpg" %></p>
-  <p>name : <%= book.title %></p>
+  <p>投稿ユーザー画像：<%= link_to attachment_image_tag(@user, :profile_image, size: "100x100", format: 'jpeg', fallback: "no_image.jpg"),user_path(@user.id) %></p>
+  <p>Title : <%= link_to book.title, book_path(book.id) %></p>
   <p>Opinion : <%= book.body %></p>
 </div>
 <% end %>

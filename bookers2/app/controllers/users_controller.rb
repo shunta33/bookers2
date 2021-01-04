@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :authenticate_user!, only: [:edit,:update]
+before_action :authenticate_user!, only: [:edit,:update,:show,:index]
 
   def index
     @book = Book.new
@@ -8,9 +8,9 @@ before_action :authenticate_user!, only: [:edit,:update]
   end
 
   def show
+    @book_show = Book.new
     @user = User.find(params[:id])
-    @book = Book.where(params[:id])
-    p @book
+    @book = Book.where(user_id: params[:id])
   end
 
   def edit
