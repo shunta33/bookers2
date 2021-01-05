@@ -52,7 +52,21 @@
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "#{key}") %>
       <% end %>
-
-  <%= yield %>
+    <main>
+      <div class="container px-5 px-sm-0">
+        <div class="row">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
